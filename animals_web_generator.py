@@ -20,14 +20,19 @@ def generate_animal_data_string(animals_data):
         # Create HTML for each animal inside <li> tags.
         output += '<li class="cards__item">'
 
+        # Animal name in a card title div
         if name:
-            output += f"Name: {name}<br/>\n"
+            output += f'<div class="card__title">{name}</div>\n'
+
+        # Animal details inside a paragraph
+        output += '<p class="card__text">'
         if diet:
-            output += f"Diet: {diet}<br/>\n"
+            output += f'<strong>Diet:</strong> {diet}<br/>\n'
         if locations:
-            output += f"Location: {locations[0]}<br/>\n"  # Display the first location
+            output += f'<strong>Location:</strong> {locations[0]}<br/>\n'  # Display the first location
         if animal_type:
-            output += f"Type: {animal_type}<br/>\n"
+            output += f'<strong>Type:</strong> {animal_type}<br/>\n'
+        output += '</p>'  # Close the <p> tag
 
         output += '</li>'  # Close the <li> tag
 
